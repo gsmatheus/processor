@@ -67,6 +67,23 @@ services:
       - redis
       - postgres
 
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: processor_pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    ports:
+      - "8080:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
 volumes:
   postgres_data:
+    driver: local
+  pgadmin_data:
     driver: local 
