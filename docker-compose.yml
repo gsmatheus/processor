@@ -62,7 +62,7 @@ services:
       - REDIS_HOST=redis
     volumes:
       # Mapeia um diretório local 'data' para dentro do container
-      - ./data:/data
+      - /tmp/data:/data
     depends_on:
       - redis
       - postgres
