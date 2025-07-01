@@ -1,0 +1,25 @@
+{
+  "name": "processor",
+  "version": "1.0.0",
+  "description": "Processador de arquivos de texto em larga escala com BullMQ e PostgreSQL",
+  "main": "producer.js",
+  "type": "module",
+  "scripts": {
+    "start:producer": "node producer.js",
+    "start:worker": "node worker.js"
+  },
+  "keywords": [
+    "bullmq",
+    "postgresql",
+    "redis",
+    "processing"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bullmq": "^5.7.9",
+    "ioredis": "^5.4.1",
+    "pg": "^8.11.5",
+    "pg-format": "^1.0.4"
+  }
+}
